@@ -118,6 +118,7 @@ function computerPick() {
   console.log(comMove)
   return comMove
 } 
+
 let headerElement = document.getElementById('info').innerHTML
 function reset () {
   localStorage.removeItem('outcome');
@@ -144,6 +145,12 @@ function reset () {
       document.getElementById('info').innerHTML = headerElement
       document.getElementById('playerOne').innerHTML = ''
       document.getElementById('playerTwo').innerHTML = ''
+      playerNames = {
+        nameOne: 'Computer One',
+        nameTwo: 'Computer Two'
+      };
+      //getPlayer () = null
+      //yourpick () = ''
 }
 
 
