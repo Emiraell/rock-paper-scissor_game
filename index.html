@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emirael|Rock|paper|scissor</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body style="background-color: rgba(40, 63, 9, 0.96);">
+  <h3>ROCK PAPER SCISSOR GAME</h3>
+
+
+  <div id="info">
+    <p style="margin: 0;">Name</p>
+    <div id="header">player one name</div>
+    <input type="text" placeholder="Enter player name" class="js-input">
+    <button onclick=" getPlayer ()">Enter</button>
+  </div>
+
+  <div class="css-playersName" style="display: flex; justify-content: space-around;">
+    <div>
+      <div id="playerOneName">Player one</div>
+      <p id="playerOne"></p>
+    </div>
+    <div>
+      <div id="playerTwoName">player two</div>
+      <p id="playerTwo"></p>
+    </div>
+  </div>
+
+
+  <div class="btn-div">
+    <button class="js-rock css-btn" onclick="
+      yourpick('rock', 'paper') ">
+      <img class="css-img" src="images/rock.jpg" alt="">
+    </button>
+
+    <button class="js-paper css-btn" onclick="
+    yourpick ('paper', 'scissor' ) ">
+      <img class="css-img" src="images/paper.jpg" alt="">
+    </button>
+    
+    <button class="js-scissor css-btn" onclick="
+    yourpick ('scissor', 'rock') ">
+      <img class="css-img" src="images/scissors1.jpg" alt="">
+    </button>
+  </div>
+  
+  <div>
+    <p class="js-display" style="color: aliceblue;"></p>
+    <p class="js-score" style="color: white;"></p>
+  </div>
+
+  <div>
+    <button onclick=" 
+    reset ()">Reset</button>
+    
+    <button class = "js-play" onclick="
+    playAuto ()">Auto play</button>
+  </div>
+  
+  
+  <script src="js/index.js"></script>
+</body>
+</html

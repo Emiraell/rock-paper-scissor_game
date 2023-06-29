@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rockpaper</title>
+</head>
+<body style="background-color: rgb(133, 75, 54);">
+  <button onclick=" getPlayer ()">
+    m
+  </button>
+  <div id="info">
+    <div id="header">player one name</div>
+    <input style="width: 100%;" type="text" class="js-input">
+  </div>
+
+  <div class="css-playersName" style="display: flex; justify-content: space-around;">
+    <div>
+      <div id="playerOneName">Player one</div>
+      <p id="playerOne"> me</p>
+    </div>
+    <div>
+      <div id="playerTwoName">player two</div>
+      <p id="playerTwo"> us</p>
+    </div>
+  </div>
+
+
+
+  <p id="me"></p>
+
+
+
+</body>
+
+<script>
+  
+let playerNames = [{
+  nameOne: '',
+  nameTwo: ''
+}];
+
+console.log(playerNames)
+
+function getPlayer () {
+let playerLm = document.getElementById('header') 
+if ( playerLm.innerHTML === 'player one name') {
+  let inputLm = document.querySelector('.js-input')
+   nameOne = inputLm.value;
+  if (nameOne === '') {
+    nameOne = 'Computer One'
+    playerNames.push({nameOne})
+    document.getElementById('playerOne').innerHTML = nameOne
+    playerLm.innerHTML = 'player two name'
+  } else {
+  playerNames.push({nameOne})
+  document.getElementById('playerOne').innerHTML = nameOne
+  inputLm.value = '' 
+  playerLm.innerHTML = 'player two name'
+}
+console.log(playerNames)
+
+} else {
+  let inputLm = document.querySelector('.js-input')
+  nameTwo = inputLm.value
+  if (nameTwo === '') {
+    nameTwo = 'Computer Two'
+    playerNames.push({nameTwo})
+    document.getElementById('playerTwo').innerHTML = nameTwo
+    playerLm.innerHTML = 'player one name'
+  } else {
+  playerNames.push({nameTwo})
+  document.getElementById('playerTwo').innerHTML = nameTwo
+  inputLm.value = '' 
+  playerLm.innerHTML = 'player one name'
+}
+console.log(playerNames)
+  
+}
+}
+
+  /*let playernames = []
+
+  function getPlayer () {
+    let playerLm = document.getElementById('header') 
+  if ( playerLm.innerHTML === 'player one name') {
+    let inputLm = document.querySelector('.js-inp')
+    let nameOne = inputLm.value;
+    if (nameOne === '') {
+      nameOne = 'Computer One'
+      document.getElementById('playerOne').innerHTML = nameOne
+      playerLm.innerHTML = 'player two name'
+    } else {
+    document.getElementById('playerOne').innerHTML = nameOne
+    inputLm.value = '' 
+    playerLm.innerHTML = 'player two name'
+  }
+
+  } else {
+    let inputLm = document.querySelector('.js-inp')
+    let nameTwo = inputLm.value
+    if (nameTwo === '') {
+      nameTwo = 'Computer Two'
+      document.getElementById('playerTwo').innerHTML = nameTwo
+      playerLm.innerHTML = 'player one name'
+    } else {
+    document.getElementById('playerTwo').innerHTML = nameTwo
+    inputLm.value = '' 
+    playerLm.innerHTML = 'player one name'
+  }
+    document.getElementById('playerTwo').innerHTML = nameTwo
+    inputLm.value = '' 
+    playerLm.innerHTML = 'player one name'
+
+  } 
+
+  }*/
+
+  /*function render () {
+    let playerOne = [0]
+    let playerTwo = [1]
+    console.log(playerOne,playerTwo)
+    let bE =  document.querySelector('.js-inp')
+   let name = bE.value
+   console.log(` you ${name}`)
+   document.getElementById('me').innerHTML = `you ${name}`
+   bE.value = ''
+    
+  }*/
+</script>
+</html>
