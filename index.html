@@ -17,7 +17,7 @@
     <button onclick=" getPlayer ()">Enter</button>
   </div>
 
-  <div class="css-playersName" style="display: flex; justify-content: space-around;">
+  <div id="playerNames" class="css-playersName" style="display: flex; justify-content: space-around;">
     <div>
       <div id="playerOneName">Player one</div>
       <p id="playerOne"></p>
@@ -33,7 +33,7 @@
 
     </div>
 
-    <div class="btn-div">
+    <div id="btn-div">
       <button class="js-rock css-btn" onclick="
         yourpick('rock', 'paper') ">
         <img class="css-img" src="images/rock.jpg" alt="">
@@ -50,7 +50,7 @@
       </button>
     </div>
     
-    <div>
+    <div id="js-outcome">
       <p class="js-display" style="color: aliceblue;"></p>
       <p class="js-score" style="color: white;"></p>
     </div>
