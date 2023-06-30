@@ -4,7 +4,7 @@ let score = JSON.parse(localStorage.getItem('outcome')) ||
   ties: 0,
   losses: 0
 };
-let btnDiv = document.querySelector('.btn-div')
+let btnDiv = document.getElementById('btn-div')
 
 let finisheddDiv = document.getElementById('finishedd')
 
@@ -21,8 +21,7 @@ let infoDiv = document.getElementById('info')
 let inputLm = document.querySelector('.js-input');
 let playerLm = document.getElementById('header')
 function getPlayer () {
-
- 
+  
 if ( playerLm.innerHTML === 'player one name') {
   
    nameOne = inputLm.value;
@@ -59,6 +58,11 @@ inputLm.value = ''
 playerLm.innerHTML = 'player one name'
 }
 
+if (document.getElementById('playerOne').innerHTML === '') {
+  document.getElementById('playerOne').innerHTML = playerNames.nameOne
+  document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+}
+
 }
 
 let executed = false;
@@ -78,7 +82,10 @@ function yourpick (picked, other) {
   //getPlayer ()
   computerPick ()
 
-  
+  if (document.getElementById('playerOne').innerHTML === '') {
+    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  }  
   //let inputElement = document.querySelector('.js-input')
   if (comMove === picked) {
     result = 'tie'
@@ -171,7 +178,7 @@ function reset () {
       //reset (getPlayer())
       infoDiv.hidden = false;
       btnDiv.hidden = false;
-      finisheddDiv = true
+      //finisheddDiv = true
 }
 
 
@@ -206,15 +213,30 @@ function reset () {
 
   function finished () {
     btnDiv.hidden = true;
-    finisheddDiv.hidden = false
+    //finisheddDiv.hidden = false
+  document.querySelector('.js-display').innerHTML = ''
+  document.querySelector('.js-score')
+  .innerHTML = ''
     let winner = ''
+    if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
+      return alert (`You can't finish what you did't start`)
+    
+    } else {
       if (score.wins > score.ties && score.wins > score.losses) {
       console.log (winner = `${playerNames.nameOne} wins`)
     }else if (score.losses > score.ties && score.losses > score.wins){
       console.log( winner = `${playerNames.nameTwo} wins`)
     } else { console.log (winner = 'no winner')}
+  }
+
 
     let htmlWinner = `<p>${winner}</p>`
     finisheddDiv.innerHTML = htmlWinner
+    setTimeout(() => {
+      reset ()
+      finisheddDiv.innerHTML = ''
+    },3000)
+    
+    
     
   }
