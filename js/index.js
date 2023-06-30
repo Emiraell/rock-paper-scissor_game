@@ -4,7 +4,9 @@ let score = JSON.parse(localStorage.getItem('outcome')) ||
   ties: 0,
   losses: 0
 };
+let btnDiv = document.querySelector('.btn-div')
 
+let finisheddDiv = document.getElementById('finishedd')
 
 let result =''
 let comMove =''
@@ -103,6 +105,7 @@ function yourpick (picked, other) {
   .innerHTML = `${playerNames.nameOne} wins: ${score.wins} ties: ${score.ties} ${playerNames.nameTwo} wins: ${score.losses}`
   //inputLm.value = '';
   infoDiv.hidden = true
+  //btnDiv.hidden = true
   
 }
 
@@ -167,6 +170,8 @@ function reset () {
       //yourpick ()
       //reset (getPlayer())
       infoDiv.hidden = false;
+      btnDiv.hidden = false;
+      finisheddDiv = true
 }
 
 
@@ -197,4 +202,19 @@ function reset () {
     isPlaying = false
     document.querySelector('.js-play').innerHTML = 'continue'
   }
+  }
+
+  function finished () {
+    btnDiv.hidden = true;
+    finisheddDiv.hidden = false
+    let winner = ''
+      if (score.wins > score.ties && score.wins > score.losses) {
+      console.log (winner = `${playerNames.nameOne} wins`)
+    }else if (score.losses > score.ties && score.losses > score.wins){
+      console.log( winner = `${playerNames.nameTwo} wins`)
+    } else { console.log (winner = 'no winner')}
+
+    let htmlWinner = `<p>${winner}</p>`
+    finisheddDiv.innerHTML = htmlWinner
+    
   }

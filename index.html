@@ -28,28 +28,34 @@
     </div>
   </div>
 
+  <section>
+    <div id="finishedd">
 
-  <div class="btn-div">
-    <button class="js-rock css-btn" onclick="
-      yourpick('rock', 'paper') ">
-      <img class="css-img" src="images/rock.jpg" alt="">
-    </button>
+    </div>
 
-    <button class="js-paper css-btn" onclick="
-    yourpick ('paper', 'scissor' ) ">
-      <img class="css-img" src="images/paper.jpg" alt="">
-    </button>
+    <div class="btn-div">
+      <button class="js-rock css-btn" onclick="
+        yourpick('rock', 'paper') ">
+        <img class="css-img" src="images/rock.jpg" alt="">
+      </button>
+
+      <button class="js-paper css-btn" onclick="
+      yourpick ('paper', 'scissor' ) ">
+        <img class="css-img" src="images/paper.jpg" alt="">
+      </button>
+      
+      <button class="js-scissor css-btn" onclick="
+      yourpick ('scissor', 'rock') ">
+        <img class="css-img" src="images/scissors1.jpg" alt="">
+      </button>
+    </div>
     
-    <button class="js-scissor css-btn" onclick="
-    yourpick ('scissor', 'rock') ">
-      <img class="css-img" src="images/scissors1.jpg" alt="">
-    </button>
-  </div>
-  
-  <div>
-    <p class="js-display" style="color: aliceblue;"></p>
-    <p class="js-score" style="color: white;"></p>
-  </div>
+    <div>
+      <p class="js-display" style="color: aliceblue;"></p>
+      <p class="js-score" style="color: white;"></p>
+    </div>
+  </section>
+    
 
   <div>
     <button onclick=" 
@@ -57,6 +63,7 @@
     
     <button class = "js-play" onclick="
     playAuto ()">Auto play</button>
+    <button id="finished" onclick=" finished ()">finished</button>
   </div>
   
   
