@@ -13,6 +13,7 @@ let playerNames = {
   nameOne: 'Computer One',
   nameTwo: 'Computer Two'
 };
+let infoDiv = document.getElementById('info')
 
 //console.log(playerNames.nameOne)
 let inputLm = document.querySelector('.js-input');
@@ -58,9 +59,10 @@ playerLm.innerHTML = 'player one name'
 
 }
 
+let executed = false;
 
 function called () {
-  let executed = false;
+ // executed = false;
   return () => {
     if (!executed) {
       executed = true;
@@ -70,9 +72,8 @@ function called () {
  }
 
 function yourpick (picked, other) {
-  
   called ()
-  document.getElementById('info').innerHTML = ''
+  //getPlayer ()
   computerPick ()
 
   
@@ -101,6 +102,7 @@ function yourpick (picked, other) {
   document.querySelector('.js-score')
   .innerHTML = `${playerNames.nameOne} wins: ${score.wins} ties: ${score.ties} ${playerNames.nameTwo} wins: ${score.losses}`
   //inputLm.value = '';
+  infoDiv.hidden = true
   
 }
 
@@ -120,6 +122,7 @@ function computerPick() {
 } 
 
 let headerElement = document.getElementById('info').innerHTML
+
 function reset () {
   localStorage.removeItem('outcome');
      score = {
@@ -128,29 +131,42 @@ function reset () {
       losses: 0
     };
 
+    playerNames = {
+      nameOne: 'Computer One',
+      nameTwo: 'Computer Two'
+    };
+
     /*if (result !== '') {result = ''*/
     document.querySelector('.js-display')
   .innerHTML = ''//}
-    setTimeout( () => {
-    document.querySelector('.js-score')
-  .innerHTML = ''}, 1200
-    )
-    
+
   document.querySelector('.js-score')
   .innerHTML = `wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`
-      console.log(score)
-      clearInterval (intervalId)
+  console.log(score)
+    setTimeout( () => {
+    document.querySelector('.js-score')
+  .innerHTML = ''}, 1000
+    )
+    
+    
+    //document.getElementById('info').innerHTML = ''
+    //document.getElementById('info').innerHTML = headerElement
+    
+    document.getElementById('playerOne').innerHTML = ''
+    document.getElementById('playerTwo').innerHTML = ''
+    
+      
+    clearInterval (intervalId)
     isPlaying = false
-      document.querySelector('.js-play').innerHTML = 'Auto play'
-      document.getElementById('info').innerHTML = headerElement
-      document.getElementById('playerOne').innerHTML = ''
-      document.getElementById('playerTwo').innerHTML = ''
-      playerNames = {
-        nameOne: 'Computer One',
-        nameTwo: 'Computer Two'
-      };
+    document.querySelector('.js-play').innerHTML = 'Auto play'
+   // reset(() => {called()})
+
+      //getPlayer () = ''
+      //called ()
       //getPlayer () = null
-      //yourpick () = ''
+      //yourpick ()
+      //reset (getPlayer())
+      infoDiv.hidden = false;
 }
 
 
