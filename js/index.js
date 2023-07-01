@@ -98,7 +98,7 @@ function yourpick (picked, other) {
   called ()
   //getPlayer ()
   computerPick ()
-  c3.JSONheckPlayerHeader ()
+  checkPlayerHeader ()
   checkPlayerName ()
   //let inputElement = document.querySelector('.js-input')
   if (comMove === picked) {
