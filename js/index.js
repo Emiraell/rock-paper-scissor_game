@@ -23,6 +23,8 @@ let playerLm = document.getElementById('header')
 let playerOneName = document.getElementById('playerOneName')
 let playerTwoName = document.getElementById('playerTwoName')
 let namess = document.getElementById('playerNames')
+
+
 function getPlayer () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
@@ -96,7 +98,7 @@ function yourpick (picked, other) {
   called ()
   //getPlayer ()
   computerPick ()
-  checkPlayerHeader ()
+  c3.JSONheckPlayerHeader ()
   checkPlayerName ()
   //let inputElement = document.querySelector('.js-input')
   if (comMove === picked) {
@@ -226,7 +228,7 @@ function reset () {
   }
 
   function finished () {
-    const mainElement = document.getElementById('main')
+    //const mainElement = document.getElementById('main')
    
     if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
       return alert (`You can't finish what you did't start`)
@@ -234,11 +236,13 @@ function reset () {
     } else {
       btnDiv.hidden = true;
       //finisheddDiv.hidden = false
-    /*document.querySelector('.js-display').innerHTML = ''
+    document.querySelector('.js-display').innerHTML = ''
     document.querySelector('.js-score')
-    .innerHTML = ''*/
+    .innerHTML = ''
     //mainElement.hidden = true;
     //finisheddDiv = false 
+    //infoDiv.hidden = false
+    //namess.hidden = false
 
     
       let winner = ''
