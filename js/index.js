@@ -83,23 +83,45 @@ function called () {
   function checkPlayerHeader () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
+
+  if (document.getElementById('playerOne').innerHTML === '') {
+    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  }
   }
 
- function checkPlayerName () {
+ /*function checkPlayerName () {
   if (document.getElementById('playerOne').innerHTML === '') {
     document.getElementById('playerOne').innerHTML = playerNames.nameOne
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
   }  
   
 
+ }*/
+
+ function playerTwoCheck () {
+  called ()
+  if (document.getElementById('playerTwo').innerHTML === '' ) {
+    document.getElementById('playerTwo').innerHTML = 'computer'
+    playerNames.nameTwo = "computer"
+    playerOneName.innerHTML = 'player one'
+    playerLm.innerHTML = 'player one name'
+  }
+  if ( document.getElementById('playerOne').innerHTML === 'Computer One' && document.getElementById('playerTwo').innerHTML !== 'Computer Two' ) {
+    document.getElementById('playerOne').innerHTML = 'Computer'
+    playerNames.nameTwo
+    
+   
+  }
  }
 
 function yourpick (picked, other) {
-  called ()
+  //called ()
+  playerTwoCheck ()
   //getPlayer ()
   computerPick ()
-  checkPlayerHeader ()
-  checkPlayerName ()
+  //checkPlayerHeader ()
+  //checkPlayerName ()
   //let inputElement = document.querySelector('.js-input')
   if (comMove === picked) {
     result = 'tie'
@@ -194,6 +216,7 @@ function reset () {
       btnDiv.hidden = false;
       playerOneName.innerHTML = ''
       playerTwoName.innerHTML = ''
+      inputLm.value = ''
       //finisheddDiv = true
 }
 
