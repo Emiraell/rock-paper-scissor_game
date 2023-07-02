@@ -80,7 +80,7 @@ function called () {
   }
  }
 
-  function checkPlayerHeader () {
+  /*function checkPlayerHeader () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
 
@@ -88,7 +88,7 @@ function called () {
     document.getElementById('playerOne').innerHTML = playerNames.nameOne
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
   }
-  }
+  }*/
 
  /*function checkPlayerName () {
   if (document.getElementById('playerOne').innerHTML === '') {
@@ -101,21 +101,35 @@ function called () {
 
  function playerTwoCheck () {
   called ()
+  //if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' )
+  /*if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' ) {
+    playerOneName.innerHTML = playerNames.nameOne;
+    playerTwoName.innerHTML = playerNames.nameTwo;
+  }*/
+  
   if (document.getElementById('playerTwo').innerHTML === '' ) {
     document.getElementById('playerTwo').innerHTML = 'computer'
     playerNames.nameTwo = "computer"
-    playerOneName.innerHTML = 'player one'
+    //playerOneName.innerHTML = 'player one'
     playerLm.innerHTML = 'player one name'
   }
+  
+  
   if ( document.getElementById('playerOne').innerHTML === 'Computer One' && document.getElementById('playerTwo').innerHTML !== 'Computer Two' ) {
     document.getElementById('playerOne').innerHTML = 'Computer'
     playerNames.nameTwo
-    
-   
   }
+
+  /*if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' ) {
+    playerOneName.innerHTML = playerNames.nameOne;
+    playerTwoName.innerHTML = playerNames.nameTwo;
+  }*/
  }
 
-function yourpick (picked, other) {
+ document.querySelectorAll('.js-button').addEventListener ((events) => {
+  if (events.key === 'enter') {}
+ })
+function playGame (picked, other) {
   //called ()
   playerTwoCheck ()
   //getPlayer ()
@@ -238,7 +252,7 @@ function reset () {
       } else {
         compared = 'rock'
       }
-      yourpick (player, compared)
+      playGame (player, compared)
     }
     ,1500)
     isPlaying = true;

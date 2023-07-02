@@ -13,7 +13,7 @@
   </header>
 
 
-  <main id="main">
+  <main id="main" style="background-color: black; color: aliceblue; white-space: wrap;">
     <section>
       <div id="info">
         <div id="header">player one name</div>
@@ -42,17 +42,17 @@
 
       <div id="btn-div">
         <button class="js-rock css-btn" onclick="
-          yourpick('rock', 'paper') ">
+          playGame('rock', 'paper') ">
           <img class="css-img" src="images/rock.jpg" alt="">
         </button>
 
         <button class="js-paper css-btn" onclick="
-        yourpick ('paper', 'scissor' ) ">
+        playGame ('paper', 'scissor' ) ">
           <img class="css-img" src="images/paper.jpg" alt="">
         </button>
         
         <button class="js-scissor css-btn" onclick="
-        yourpick ('scissor', 'rock') ">
+        playGame ('scissor', 'rock') ">
           <img class="css-img" src="images/scissors1.jpg" alt="">
         </button>
       </div>
@@ -71,7 +71,7 @@
         
         <button class = "js-play" onclick="
         playAuto ()">Auto play</button>
-        <button id="finished" onclick=" finished ()">finished</button>
+        <button id="finished" onclick=" finished ()">champ</button>
       </div>
     </section>
   </main>
