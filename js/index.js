@@ -4,9 +4,8 @@ let score = JSON.parse(localStorage.getItem('outcome')) ||
   ties: 0,
   losses: 0
 };
-let btnDiv = document.getElementById('btn-div')
 
-let finisheddDiv = document.getElementById('finishedd')
+
 
 let result =''
 let comMove =''
@@ -15,14 +14,11 @@ let playerNames = {
   nameOne: 'Computer One',
   nameTwo: 'Computer Two'
 };
-let infoDiv = document.getElementById('info')
 
-//console.log(playerNames.nameOne)
 let inputLm = document.querySelector('.js-input');
 let playerLm = document.getElementById('header')
 let playerOneName = document.getElementById('playerOneName')
 let playerTwoName = document.getElementById('playerTwoName')
-let namess = document.getElementById('playerNames')
 
 
 function getPlayer () {
@@ -46,12 +42,16 @@ playerLm.innerHTML = 'player two name'
 else {
   
   nameTwo = inputLm.value;
-  //if (nameTwo === '') {
-    //document.getElementById('playerTwo').innerHTML = playerNames.nameTwo}
     if (playerNames.nameOne !== 'Computer One' && inputLm.value === '' && playerNames.nameTwo === 'Computer Two') {
     playerNames.nameTwo = 'computer'
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
 
+   } else if (inputLm.value !== '' && playerNames.nameOne === 'Computer One') {
+    playerNames.nameOne = 'Computer'
+    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+    playerNames.nameTwo = nameTwo
+  document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  
    } else if (nameTwo === '') {
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
     
@@ -59,12 +59,13 @@ else {
     else {
   playerNames.nameTwo = nameTwo
   document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  //playerNames.nameOne = 'Computer'
+    //document.getElementById('playerOne').innerHTML = playerNames.nameOne
   
 }
 inputLm.value = '' 
 playerLm.innerHTML = 'player one name'
 }
-
 
 }
 
@@ -80,63 +81,27 @@ function called () {
   }
  }
 
-  /*function checkPlayerHeader () {
+  function checkPlayerHeader () {
+   called ()
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
 
-  if (document.getElementById('playerOne').innerHTML === '') {
+  if (document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '') {
     document.getElementById('playerOne').innerHTML = playerNames.nameOne
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
-  }
-  }*/
-
- /*function checkPlayerName () {
-  if (document.getElementById('playerOne').innerHTML === '') {
-    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+  } else {
+    playerNames.nameTwo = 'Computer'
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
-  }  
-  
-
- }*/
-
- function playerTwoCheck () {
-  called ()
-  //if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' )
-  /*if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' ) {
-    playerOneName.innerHTML = playerNames.nameOne;
-    playerTwoName.innerHTML = playerNames.nameTwo;
-  }*/
-  
-  if (document.getElementById('playerTwo').innerHTML === '' ) {
-    document.getElementById('playerTwo').innerHTML = 'computer'
-    playerNames.nameTwo = "computer"
-    //playerOneName.innerHTML = 'player one'
-    playerLm.innerHTML = 'player one name'
   }
-  
-  
-  if ( document.getElementById('playerOne').innerHTML === 'Computer One' && document.getElementById('playerTwo').innerHTML !== 'Computer Two' ) {
-    document.getElementById('playerOne').innerHTML = 'Computer'
-    playerNames.nameTwo
   }
 
-  /*if ( document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '' ) {
-    playerOneName.innerHTML = playerNames.nameOne;
-    playerTwoName.innerHTML = playerNames.nameTwo;
-  }*/
- }
 
- document.querySelectorAll('.js-button').addEventListener ((events) => {
-  if (events.key === 'enter') {}
- })
+  let infoDiv = document.getElementById('info')
 function playGame (picked, other) {
-  //called ()
-  playerTwoCheck ()
-  //getPlayer ()
+
   computerPick ()
-  //checkPlayerHeader ()
-  //checkPlayerName ()
-  //let inputElement = document.querySelector('.js-input')
+  checkPlayerHeader ()
+  
   if (comMove === picked) {
     result = 'tie'
   } else if (comMove  ===  other) {
@@ -155,14 +120,11 @@ function playGame (picked, other) {
 
   localStorage.setItem('outcome', JSON.stringify(score))
   
-  console.log(score)
   document.querySelector('.js-display').innerHTML = `${result}`
 
   document.querySelector('.js-score')
   .innerHTML = `${playerNames.nameOne} wins: ${score.wins} ties: ${score.ties} ${playerNames.nameTwo} wins: ${score.losses}`
-  //inputLm.value = '';
   infoDiv.hidden = true
-  //btnDiv.hidden = true
   
 }
 
@@ -182,6 +144,7 @@ function computerPick() {
 } 
 
 let headerElement = document.getElementById('info').innerHTML
+let btnDiv = document.getElementById('btn-div')
 
 function reset () {
   localStorage.removeItem('outcome');
@@ -196,10 +159,8 @@ function reset () {
       nameTwo: 'Computer Two'
     };
 
-    /*if (result !== '') {result = ''*/
     document.querySelector('.js-display')
-  .innerHTML = ''//}
-
+  .innerHTML = ''
   document.querySelector('.js-score')
   .innerHTML = `wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`
   console.log(score)
@@ -207,11 +168,6 @@ function reset () {
     document.querySelector('.js-score')
   .innerHTML = ''}, 1000
     )
-    
-    
-    //document.getElementById('info').innerHTML = ''
-    //document.getElementById('info').innerHTML = headerElement
-    
     document.getElementById('playerOne').innerHTML = ''
     document.getElementById('playerTwo').innerHTML = ''
     
@@ -219,20 +175,15 @@ function reset () {
     clearInterval (intervalId)
     isPlaying = false
     document.querySelector('.js-play').innerHTML = 'Auto play'
-   // reset(() => {called()})
-
-      //getPlayer () = ''
-      //called ()
-      //getPlayer () = null
-      //yourpick ()
-      //reset (getPlayer())
-      infoDiv.hidden = false;
+   
+    infoDiv.hidden = false;
       btnDiv.hidden = false;
       playerOneName.innerHTML = ''
       playerTwoName.innerHTML = ''
       inputLm.value = ''
-      //finisheddDiv = true
-}
+      playerLm.innerHTML = 'player one name'
+      
+  }
 
 
   let isPlaying = false;
@@ -264,25 +215,20 @@ function reset () {
   }
   }
 
+  let finisheddDiv = document.getElementById('finishedd')
+
   function finished () {
-    //const mainElement = document.getElementById('main')
    
     if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
       return alert (`You can't finish what you did't start`)
     
     } else {
       btnDiv.hidden = true;
-      //finisheddDiv.hidden = false
     document.querySelector('.js-display').innerHTML = ''
     document.querySelector('.js-score')
     .innerHTML = ''
-    //mainElement.hidden = true;
-    //finisheddDiv = false 
-    //infoDiv.hidden = false
-    //namess.hidden = false
-
-    
-      let winner = ''
+  
+    let winner = ''
       if (score.wins > score.ties && score.wins > score.losses) {
       console.log (winner = `${playerNames.nameOne} wins`)
     }else if (score.losses > score.ties && score.losses > score.wins){
