@@ -89,19 +89,19 @@ function called () {
   if (document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '') {
     document.getElementById('playerOne').innerHTML = playerNames.nameOne
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
-  } else {
+  } 
+  if (document.getElementById('playerTwo').innerHTML === '') {
     playerNames.nameTwo = 'Computer'
     document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
   }
   }
 
+  
 
   let infoDiv = document.getElementById('info')
 function playGame (picked, other) {
-
-  computerPick ()
   checkPlayerHeader ()
-  
+  computerPick ()
   if (comMove === picked) {
     result = 'tie'
   } else if (comMove  ===  other) {
