@@ -18,7 +18,7 @@
       <div id="info">
         <div id="nameInputHeader">player one name</div>
         <input type="text" placeholder="Enter player name" class="nameInput js-Nameinput">
-        <button onclick=" getPlayer ()" class="js-getPlayerBtn">Enter</button>
+        <button  class="js-getPlayerBtn">Enter</button>
       </div>
     </section>
 
@@ -41,18 +41,15 @@
       </div>
 
       <div id="rpsBtn">
-        <button class="js-rock playGameBtn js-playGame" onclick="
-          playGame('rock', 'paper') ">
+        <button class="js-rock playGameBtn js-playGame">
           <img class="css-img" src="images/rock.jpg" alt="">
         </button>
 
-        <button class="js-paper playGameBtn js-playGame" onclick="
-        playGame ('paper', 'scissor' ) ">
+        <button class="js-paper playGameBtn js-playGame">
           <img class="css-img" src="images/paper.jpg" alt="">
         </button>
         
-        <button class="js-scissor playGameBtn js-playGame" onclick="
-        playGame ('scissor', 'rock') ">
+        <button class="js-scissor playGameBtn js-playGame">
           <img class="css-img" src="images/scissors1.jpg" alt="">
         </button>
       </div>
@@ -66,12 +63,10 @@
 
     <section>
       <div>
-        <button onclick=" 
-        reset ()" class="resetBtn js-resetBtn">Reset</button>
+        <button class="resetBtn js-resetBtn">Reset</button>
         
-        <button class = "js-autoPlay autoPlayBtn" onclick="
-        playAuto ()">Auto play</button>
-        <button id="finished" onclick=" finished ()">champ</button>
+        <button class = "js-autoPlay autoPlayBtn">Auto play</button>
+        <button id="gameChamp" class="js-champ">champ</button>
       </div>
     </section>
   </main>

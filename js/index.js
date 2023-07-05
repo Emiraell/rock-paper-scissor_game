@@ -21,6 +21,47 @@ let playerOneName = document.getElementById('playerOneHeader')
 let playerTwoName = document.getElementById('playerTwoHeader')
 
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+  getPlayer ()
+}
+})
+
+document.querySelector('.js-getPlayerBtn')
+.addEventListener('click', () => { getPlayer ()})
+
+document.querySelector('.js-rock')
+.addEventListener ('click', () => {
+  playGame('rock', 'paper')
+})
+
+document.querySelector('.js-paper')
+.addEventListener ('click', () => {
+  playGame('paper', 'scissor')
+})
+
+document.querySelector('.js-scissor')
+.addEventListener ('click', () => {
+  playGame('scissor', 'rock')
+})
+
+document.querySelector('.js-resetBtn')
+.addEventListener ('click', () => {
+  reset ()
+})
+
+document.querySelector('.js-autoPlay')
+.addEventListener ('click', () => {
+  playAuto ()
+})
+
+document.querySelector('.js-champ')
+.addEventListener ('click', () => {
+  champ ()
+})
+
+
+
 function getPlayer () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
@@ -99,6 +140,8 @@ function called () {
   
 
   let infoDiv = document.getElementById('info')
+
+  document.querySelector
 function playGame (picked, other) {
   checkPlayerHeader ()
   computerPick ()
@@ -216,9 +259,9 @@ function reset () {
   }
   }
 
-  let finisheddDiv = document.getElementById('endGame')
+  let champDiv = document.getElementById('endGame')
 
-  function finished () {
+  function champ () {
    
     if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
       return alert (`You can't finish what you did't start`)
@@ -237,10 +280,10 @@ function reset () {
     } else { console.log (winner = 'no winner')}
     
     let htmlWinner = `<p>${winner}</p>`
-    finisheddDiv.innerHTML = htmlWinner
+    champDiv.innerHTML = htmlWinner
     setTimeout(() => {
       reset ()
-      finisheddDiv.innerHTML = ''
+      champDiv.innerHTML = ''
     },3000)
   }
    
