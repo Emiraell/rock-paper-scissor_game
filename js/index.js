@@ -15,10 +15,10 @@ let playerNames = {
   nameTwo: 'Computer Two'
 };
 
-let inputLm = document.querySelector('.js-input');
-let playerLm = document.getElementById('header')
-let playerOneName = document.getElementById('playerOneName')
-let playerTwoName = document.getElementById('playerTwoName')
+let inputLm = document.querySelector('.js-Nameinput');
+let playerLm = document.getElementById('nameInputHeader')
+let playerOneName = document.getElementById('playerOneHeader')
+let playerTwoName = document.getElementById('playerTwoHeader')
 
 
 function getPlayer () {
@@ -29,11 +29,11 @@ if ( playerLm.innerHTML === 'player one name') {
   
    nameOne = inputLm.value;
   if (nameOne === '') {
-    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+    document.getElementById('playerOneName').innerHTML = playerNames.nameOne
     
   } else {
   playerNames.nameOne = nameOne
-  document.getElementById('playerOne').innerHTML = playerNames.nameOne
+  document.getElementById('playerOneName').innerHTML = playerNames.nameOne
 }
 inputLm.value = '' 
 playerLm.innerHTML = 'player two name'
@@ -44,21 +44,21 @@ else {
   nameTwo = inputLm.value;
     if (playerNames.nameOne !== 'Computer One' && inputLm.value === '' && playerNames.nameTwo === 'Computer Two') {
     playerNames.nameTwo = 'computer'
-    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+    document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
 
    } else if (inputLm.value !== '' && playerNames.nameOne === 'Computer One') {
     playerNames.nameOne = 'Computer'
-    document.getElementById('playerOne').innerHTML = playerNames.nameOne
+    document.getElementById('playerOneName').innerHTML = playerNames.nameOne
     playerNames.nameTwo = nameTwo
-  document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
   
    } else if (nameTwo === '') {
-    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+    document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
     
   }
     else {
   playerNames.nameTwo = nameTwo
-  document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
   //playerNames.nameOne = 'Computer'
     //document.getElementById('playerOne').innerHTML = playerNames.nameOne
   
@@ -86,13 +86,13 @@ function called () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
 
-  if (document.getElementById('playerOne').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '') {
-    document.getElementById('playerOne').innerHTML = playerNames.nameOne
-    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+  if (document.getElementById('playerOneName').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '') {
+    document.getElementById('playerOneName').innerHTML = playerNames.nameOne
+    document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
   } 
-  if (document.getElementById('playerTwo').innerHTML === '') {
+  if (document.getElementById('playerTwoName').innerHTML === '') {
     playerNames.nameTwo = 'Computer'
-    document.getElementById('playerTwo').innerHTML = playerNames.nameTwo
+    document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
   }
   }
 
@@ -168,8 +168,8 @@ function reset () {
     document.querySelector('.js-score')
   .innerHTML = ''}, 1000
     )
-    document.getElementById('playerOne').innerHTML = ''
-    document.getElementById('playerTwo').innerHTML = ''
+    document.getElementById('playerOneName').innerHTML = ''
+    document.getElementById('playerTwoName').innerHTML = ''
     
       
     clearInterval (intervalId)

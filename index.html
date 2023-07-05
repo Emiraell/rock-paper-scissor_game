@@ -16,21 +16,21 @@
   <main id="main" style="background-color: black; color: aliceblue; white-space: wrap;">
     <section>
       <div id="info">
-        <div id="header">player one name</div>
-        <input type="text" placeholder="Enter player name" class="js-input">
-        <button onclick=" getPlayer ()">Enter</button>
+        <div id="nameInputHeader">player one name</div>
+        <input type="text" placeholder="Enter player name" class="nameInput js-Nameinput">
+        <button onclick=" getPlayer ()" class="js-getPlayerBtn">Enter</button>
       </div>
     </section>
 
     <section>
-      <div id="playerNames" class="css-playersName" style="display: flex; justify-content: space-around;">
-        <div id="names">
-          <div id="playerOneName"></div>
-          <p id="playerOne"></p>
+      <div id="playersInfo" class="css-playersName" style="display: flex; justify-content: space-around;">
+        <div>
+          <div id="playerOneHeader"></div>
+          <p id="playerOneName"></p>
         </div>
         <div>
-          <div id="playerTwoName"></div>
-          <p id="playerTwo"></p>
+          <div id="playerTwoHeader"></div>
+          <p id="playerTwoName"></p>
         </div>
       </div>
     </section>
