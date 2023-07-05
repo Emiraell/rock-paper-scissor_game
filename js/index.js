@@ -86,7 +86,7 @@ function called () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
 
-  if (document.getElementById('playerOneName').innerHTML === '' && document.getElementById('playerTwo').innerHTML === '') {
+  if (document.getElementById('playerOneName').innerHTML === '' && document.getElementById('playerTwoName').innerHTML === '') {
     document.getElementById('playerOneName').innerHTML = playerNames.nameOne
     document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
   } 
@@ -190,20 +190,21 @@ function reset () {
   let intervalId;
 
   function playAuto () {
+    //checkPlayerHeader ()
 
     if (!isPlaying) {
     intervalId = setInterval (() => {
-      let player = computerPick ()
-      let compared = ''
+      let playerMove = computerPick ()
+      let computerMove = ''
 
-      if (player === 'rock') {
-        compared = 'paper'
-      } else if (player === 'paper') {
-        compared = 'scissor'
+      if (playerMove === 'rock') {
+        computerMove = 'paper'
+      } else if (playerMove === 'paper') {
+        computerMove = 'scissor'
       } else {
-        compared = 'rock'
+        computerMove = 'rock'
       }
-      playGame (player, compared)
+      playGame (playerMove, computerMove)
     }
     ,1500)
     isPlaying = true;
@@ -215,7 +216,7 @@ function reset () {
   }
   }
 
-  let finisheddDiv = document.getElementById('finishedd')
+  let finisheddDiv = document.getElementById('endGame')
 
   function finished () {
    
