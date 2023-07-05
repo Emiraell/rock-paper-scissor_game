@@ -58,8 +58,8 @@
       </div>
       
       <div id="gameOutcome">
-        <p class="js-display " style="color: aliceblue;"></p>
-        <p class="js-score scoreDisplay" style="color: white;"></p>
+        <p class="js-display winnerDisplay" style="color: aliceblue;"></p>
+        <p class="js-playersScore scoreDisplay" style="color: white;"></p>
       </div>
     </section>
       
@@ -67,9 +67,9 @@
     <section>
       <div>
         <button onclick=" 
-        reset ()">Reset</button>
+        reset ()" class="resetBtn js-resetBtn">Reset</button>
         
-        <button class = "js-play" onclick="
+        <button class = "js-autoPlay autoPlayBtn" onclick="
         playAuto ()">Auto play</button>
         <button id="finished" onclick=" finished ()">champ</button>
       </div>

@@ -122,7 +122,7 @@ function playGame (picked, other) {
   
   document.querySelector('.js-display').innerHTML = `${result}`
 
-  document.querySelector('.js-score')
+  document.querySelector('.js-playersScore')
   .innerHTML = `${playerNames.nameOne} wins: ${score.wins} ties: ${score.ties} ${playerNames.nameTwo} wins: ${score.losses}`
   infoDiv.hidden = true
   
@@ -144,7 +144,7 @@ function computerPick() {
 } 
 
 let headerElement = document.getElementById('info').innerHTML
-let btnDiv = document.getElementById('btn-div')
+let rpsDiv = document.getElementById('rpsBtn')
 
 function reset () {
   localStorage.removeItem('outcome');
@@ -161,11 +161,11 @@ function reset () {
 
     document.querySelector('.js-display')
   .innerHTML = ''
-  document.querySelector('.js-score')
+  document.querySelector('.js-playersScore')
   .innerHTML = `wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`
   console.log(score)
     setTimeout( () => {
-    document.querySelector('.js-score')
+    document.querySelector('.js-playersScore')
   .innerHTML = ''}, 1000
     )
     document.getElementById('playerOneName').innerHTML = ''
@@ -174,10 +174,10 @@ function reset () {
       
     clearInterval (intervalId)
     isPlaying = false
-    document.querySelector('.js-play').innerHTML = 'Auto play'
+    document.querySelector('.js-autoPlay').innerHTML = 'Auto play'
    
     infoDiv.hidden = false;
-      btnDiv.hidden = false;
+      rpsDiv.hidden = false;
       playerOneName.innerHTML = ''
       playerTwoName.innerHTML = ''
       inputLm.value = ''
@@ -208,11 +208,11 @@ function reset () {
     }
     ,1500)
     isPlaying = true;
-    document.querySelector('.js-play').innerHTML = 'stop'
+    document.querySelector('.js-autoPlay').innerHTML = 'stop'
   } else {
     clearInterval (intervalId)
     isPlaying = false
-    document.querySelector('.js-play').innerHTML = 'continue'
+    document.querySelector('.js-autoPlay').innerHTML = 'continue'
   }
   }
 
@@ -224,9 +224,9 @@ function reset () {
       return alert (`You can't finish what you did't start`)
     
     } else {
-      btnDiv.hidden = true;
+      rpsDiv.hidden = true;
     document.querySelector('.js-display').innerHTML = ''
-    document.querySelector('.js-score')
+    document.querySelector('.js-playersScore')
     .innerHTML = ''
   
     let winner = ''
