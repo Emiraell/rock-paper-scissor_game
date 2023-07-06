@@ -5,9 +5,12 @@
 body {
   white-space: nowrap;
   color: wheat;
-  background-color: rgb(199, 167, 167);
-  padding: 10%;
+  background-color:rgb(33, 49, 7);
+  padding: 5px;
   font-family: arial;
+  display: grid;
+  grid-template-columns: 1fr;
+  
 
 }
 h3 {
@@ -16,36 +19,74 @@ h3 {
   word-spacing: 2px;
   letter-spacing: 2px;
 }
-#main {
-  background-color:rgb(33, 49, 7);
-  padding: 3%;
-  height: 500px;
+#main{
+  background-color:rgb(14, 2, 2);
+  padding: 5%;
   display: flex;
   flex-direction: column;
-  
-  justify-content: safe;
+
 }
-.css-img {
-  width: 100%;
-  height: 100%;
+
+.inputHeader {
+  margin-bottom: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+input::placeholder {
+  padding: 3%;
+  font-size: 16px;
+}
+
+input, .getPlayer-btn {
+  width: 50%;
+  height: 35px;
+  border-radius: 4px;
+  border: none;
+}
+
+.getPlayer-btn {
+  width: 80px;
+  background-color: rgb(41, 54, 2);
+  color: rgb(225, 195, 195);
+  font-size: 17px;
+  cursor: pointer;
+  transition: opacity 0.5s;
+}
+
+.getPlayer-btn:hover {
+  opacity: 0.9;
+}
+.getPlayer-btn:active {
+  opacity: 0.7;
+}
+
+.playersInfo {
+  margin: 3% 1%;
+  display: flex;
+  justify-content: space-around;
+  max-width: 350px;
+  border-bottom: 1px solid gray;
+}
+
+ img {
+  width: 70%;
+  height: 70%;
   border-radius: 70%;
-  background: transparent;
-  object-fit: cover;
+  background-color: transparent;
+  object-fit: contain;
+  align-content: center;
 }
 .playGameBtn {
   border-radius: 70%;
   width: 100px;
   height: 100px;
 }
-.btn-div {
-  display: flex;
-  flex-wrap: nowrap;
+.rps-btn button {
   column-gap: 10px;
   margin-top: 30px;
-}
-.css-playersName {
-  display: flex;
-  justify-content: space-between;
-  padding: 5%;
-  /*padding-right:  35%;*/
+  height: 100px;
+  width: 100px;
+  background-color: rgba(42, 8, 8, 0.532);
+  border: none;
 }

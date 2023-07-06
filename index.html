@@ -7,29 +7,30 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body style="background-color: rgba(40, 63, 9, 0.96);">
-  <header>
-    <h3>ROCK PAPER SCISSOR GAME</h3>
-  </header>
+<body>
+  
 
-
-  <main id="main" style="background-color: black; color: aliceblue; white-space: wrap;">
+  <main id="main">
+    <header>
+      <h3>ROCK PAPER SCISSOR GAME</h3>
+    </header>
+  
     <section>
-      <div id="info">
-        <div id="nameInputHeader">player one name</div>
+      <div id="info" class="getPlayers">
+        <div id="nameInputHeader" class="inputHeader">player one name</div>
         <input type="text" placeholder="Enter player name" class="nameInput js-Nameinput">
-        <button  class="js-getPlayerBtn">Enter</button>
+        <button  class="js-getPlayerBtn getPlayer-btn">Enter</button>
       </div>
     </section>
 
     <section>
-      <div id="playersInfo" class="css-playersName" style="display: flex; justify-content: space-around;">
+      <div id="playersInfo" class="playersInfo">
         <div>
-          <div id="playerOneHeader"></div>
+          <div id="playerOneHeader" class="playerOne"></div>
           <p id="playerOneName"></p>
         </div>
         <div>
-          <div id="playerTwoHeader"></div>
+          <div id="playerTwoHeader" class="playerTwo"></div>
           <p id="playerTwoName"></p>
         </div>
       </div>
@@ -40,23 +41,23 @@
 
       </div>
 
-      <div id="rpsBtn">
+      <div id="rpsBtn" class="rps-btn">
         <button class="js-rock playGameBtn js-playGame">
-          <img class="css-img" src="images/rock.jpg" alt="">
+          <img class="css-img" src="images/trophy.PNG" alt="">
         </button>
 
         <button class="js-paper playGameBtn js-playGame">
-          <img class="css-img" src="images/paper.jpg" alt="">
+          <img class="css-img" src="images/paper.PNG" alt="">
         </button>
         
         <button class="js-scissor playGameBtn js-playGame">
-          <img class="css-img" src="images/scissors1.jpg" alt="">
+          <img class="css-img" src="images/scissor.PNG" alt="">
         </button>
       </div>
       
       <div id="gameOutcome">
-        <p class="js-display winnerDisplay" style="color: aliceblue;"></p>
-        <p class="js-playersScore scoreDisplay" style="color: white;"></p>
+        <p class="js-display winnerDisplay"></p>
+        <p class="js-playersScore scoreDisplay"></p>
       </div>
     </section>
       
