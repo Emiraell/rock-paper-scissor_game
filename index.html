@@ -25,12 +25,12 @@
 
     <section>
       <div id="playersInfo" class="playersInfo">
-        <div>
+        <div class="players-div">
           <div id="playerOneHeader" class="playerOne"></div>
-          <p id="playerOneName"></p>
+          <div id="playerTwoHeader" class="playerTwo"></div> 
         </div>
-        <div>
-          <div id="playerTwoHeader" class="playerTwo"></div>
+        <div class="playerNames">
+          <p id="playerOneName"></p>
           <p id="playerTwoName"></p>
         </div>
       </div>
@@ -55,7 +55,10 @@
         </button>
       </div>
       
-      <div id="gameOutcome">
+      <div id="gameOutcome" class="outcome">
+        <div>
+          <p class="moves js-moves"></p>
+        </div>
         <p class="js-display winnerDisplay"></p>
         <p class="js-playersScore scoreDisplay"></p>
       </div>
@@ -63,11 +66,11 @@
       
 
     <section>
-      <div>
+      <div class="action-btn">
         <button class="resetBtn js-resetBtn">Reset</button>
         
         <button class = "js-autoPlay autoPlayBtn">Auto play</button>
-        <button id="gameChamp" class="js-champ">champ</button>
+        <button id="gameChamp" class="js-champ champBtn">champ</button>
       </div>
     </section>
   </main>
