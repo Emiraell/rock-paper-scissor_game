@@ -99,6 +99,7 @@ input {
   background-color: rgb(65, 40, 8);
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 }
 .htmlBtn {
   height: 70px;
@@ -146,11 +147,11 @@ input {
 }
 
 .winnerDisplay {
-  padding: 3%;
+  padding-bottom: 3%;
   font-weight: 550;
 }
 .scoreDisplay {
-  padding: 3%;
+
   white-space: pre-wrap;
 }
 .action-btn button {
@@ -162,6 +163,7 @@ input {
   cursor: pointer;
   color: white;
   padding: 2px 2px;
+  
 }
 .resetBtn {
   background-color: rgb(156, 24, 24);
@@ -172,4 +174,12 @@ input {
 }
 .champBtn {
   background-color: rgb(6, 62, 3);
+}
+
+.resetBtn:hover, .autoPlayBtn:hover, .champBtn:hover, .rps-btn button:hover {
+  opacity: 0.8;
+}
+
+.resetBtn:active, .autoPlayBtn:active, .champBtn:active, .rps-btn button:active {
+  opacity: 0.5;
 }
