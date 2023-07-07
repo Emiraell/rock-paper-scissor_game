@@ -292,13 +292,15 @@ function reset () {
   let champDiv = document.getElementById('endGame')
 
   function champ () {
+    
    
     if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
       return alert (`Play game to have a champion`)
     
     } else {
-      
       rpsDiv.hidden = true;
+      document.getElementById('gameOutcome').hidden = true
+      
     document.querySelector('.js-display').innerHTML = ''
     document.querySelector('.js-playersScore')
     .innerHTML = ''

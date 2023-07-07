@@ -100,6 +100,7 @@ input {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  transition: opacity 0.5s;
 }
 .htmlBtn {
   height: 70px;
@@ -127,7 +128,7 @@ input {
 }
 .endGame div {
   font-size: 30px;
-  color: rgb(138, 111, 31);
+  color: rgb(222, 217, 205);
   font-weight: bold;
   font-style: italic;
   text-transform: uppercase;
@@ -163,6 +164,7 @@ input {
   cursor: pointer;
   color: white;
   padding: 2px 2px;
+  transition: opacity 0.5s;
   
 }
 .resetBtn {
