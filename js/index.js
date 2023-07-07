@@ -140,15 +140,15 @@ function called () {
 
   let infoDiv = document.getElementById('info')
   const outcomeDiv = document.getElementById('gameOutcome')
-
-  document.querySelector
+  const playerMoves = document.querySelector('.js-moves')
+  
 function playGame (playerPick) {
 
   checkPlayerHeader ()
 
   computerPick ()
 
-  const playerMoves = document.querySelector('.js-moves')
+  
 
   if (playerPick === 'rock') {
     if (playerPick === comMove) {
@@ -190,8 +190,8 @@ function playGame (playerPick) {
 
   
   playerMoves.innerHTML = `
-  <div> <p>${playerPick}</p> <img src = ""> </div>
-  <div> <p>${comMove}</p> <img src = ""> </div>
+  <div> <p>${playerNames.nameOne}</p> <button class = "htmlBtn"><img class = "htmlImage" src = "images/${playerPick}.PNG"> </div></div>
+  <div> <p>${playerNames.nameTwo}</p> <button class = "htmlBtn"><img class = "htmlImage" src = "images/${comMove}.PNG"> </div> </div>
   `
   
   document.querySelector('.js-display').innerHTML = `${result}`
@@ -259,6 +259,9 @@ function reset () {
       playerLm.innerHTML = 'player one name'
       outcomeDiv.classList.remove('outcome')
       playersDiv.classList.remove('playersDiv')
+      playerMoves.innerHTML = ''
+      champDiv.innerHTML = ''
+      champDiv.classList.remove('endGame')
 
       
   }
@@ -269,9 +272,10 @@ function reset () {
 
   function playAuto () {
     //checkPlayerHeader ()
-    playersDiv.classList.add('playersDiv')
+    
     if (!isPlaying) {
     intervalId = setInterval (() => {
+      playersDiv.classList.add('playersDiv')
       let playerMove = computerPick ()
       playGame (playerMove)
     }
@@ -301,17 +305,24 @@ function reset () {
   
     let winner = ''
       if (score.wins > score.ties && score.wins > score.losses) {
-      console.log (winner = `${playerNames.nameOne} wins`)
+      console.log (winner = `
+      <div>${playerNames.nameOne} wins</div>
+      <img src = "images/trophy.PNG">` )
     }else if (score.losses > score.ties && score.losses > score.wins){
-      console.log( winner = `${playerNames.nameTwo} wins`)
-    } else { console.log (winner = 'NO CHAMPION')}
+      console.log( winner = `
+      <div>${playerNames.nameOne} wins</div>
+      <img src = "images/trophy.PNG">`)
+    } else { console.log (winner = `
+      <div>NO CHAMP</div>
+      <img src = "images/tie.PNG">`)}
     
-    let htmlWinner = `<p>${winner}</p>`
+    let htmlWinner = `<div>${winner}</div>`
     champDiv.innerHTML = htmlWinner
     setTimeout(() => {
       reset ()
       champDiv.innerHTML = ''
     },3000)
   }
-   
+
+   champDiv.classList.add('endGame')
   }

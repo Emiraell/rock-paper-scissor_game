@@ -86,13 +86,13 @@ input {
 
 }
 
- img {
+ img, .htmlImage{
   width: 50%;
   height: 50%;
   object-fit: contain;
   align-content: center;
 }
-.rps-btn button {
+.rps-btn button, .htmlBtn {
   margin: 10px 5px;
   height: 100px;
   width: 100px;
@@ -100,13 +100,49 @@ input {
   border: none;
   border-radius: 50px;
 }
+.htmlBtn {
+  height: 70px;
+  width: 70px;
+}
 
-.outcome {
+.outcome, .endGame {
   padding: 3%;
   border: 0.1px solid transparent;
   background-color: rgb(33, 1, 1);
   border-radius: 10px;
   width: 350px;
+}
+.endGame {
+  background-color: rgb(65, 2, 2);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  justify-content: center;
+}
+.endGame img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+.endGame div {
+  font-size: 30px;
+  color: rgb(138, 111, 31);
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.moves {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.moves p {
+  padding: 10px 0;
+  margin-left: -10px;
+  font-style: italic;
+  font-weight: 550;
+  
 }
 
 .winnerDisplay {
