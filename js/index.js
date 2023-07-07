@@ -60,12 +60,13 @@ document.querySelector('.js-champ')
   champ ()
 })
 
-
+const playersDiv = document.querySelector('.js-playersDiv')
 
 function getPlayer () {
   playerOneName.innerHTML = 'player one'
   playerTwoName.innerHTML = 'player two'
-  
+  playersDiv.classList.add('playersDiv')
+
 if ( playerLm.innerHTML === 'player one name') {
   
    nameOne = inputLm.value;
@@ -100,14 +101,12 @@ else {
     else {
   playerNames.nameTwo = nameTwo
   document.getElementById('playerTwoName').innerHTML = playerNames.nameTwo
-  //playerNames.nameOne = 'Computer'
-    //document.getElementById('playerOne').innerHTML = playerNames.nameOne
   
+ 
 }
 inputLm.value = '' 
 playerLm.innerHTML = 'player one name'
 }
-
 }
 
 let executed = false;
@@ -140,6 +139,7 @@ function called () {
   
 
   let infoDiv = document.getElementById('info')
+  const outcomeDiv = document.getElementById('gameOutcome')
 
   document.querySelector
 function playGame (picked, other) {
@@ -168,6 +168,7 @@ function playGame (picked, other) {
   document.querySelector('.js-playersScore')
   .innerHTML = `${playerNames.nameOne} wins: ${score.wins} ties: ${score.ties} ${playerNames.nameTwo} wins: ${score.losses}`
   infoDiv.hidden = true
+  outcomeDiv.classList.add('outcome')
   
 }
 
@@ -225,6 +226,9 @@ function reset () {
       playerTwoName.innerHTML = ''
       inputLm.value = ''
       playerLm.innerHTML = 'player one name'
+      outcomeDiv.classList.remove('outcome')
+      playersDiv.classList.remove('playersDiv')
+
       
   }
 
