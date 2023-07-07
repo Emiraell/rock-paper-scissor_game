@@ -32,17 +32,17 @@ document.querySelector('.js-getPlayerBtn')
 
 document.querySelector('.js-rock')
 .addEventListener ('click', () => {
-  playGame('rock', 'paper')
+  playGame('rock')
 })
 
 document.querySelector('.js-paper')
 .addEventListener ('click', () => {
-  playGame('paper', 'scissor')
+  playGame('paper')
 })
 
 document.querySelector('.js-scissor')
 .addEventListener ('click', () => {
-  playGame('scissor', 'rock')
+  playGame('scissor')
 })
 
 document.querySelector('.js-resetBtn')
@@ -142,17 +142,42 @@ function called () {
   const outcomeDiv = document.getElementById('gameOutcome')
 
   document.querySelector
-function playGame (picked, other) {
+function playGame (playerPick) {
+
   checkPlayerHeader ()
+
   computerPick ()
-  if (comMove === picked) {
-    result = 'tie'
-  } else if (comMove  ===  other) {
-    result = `${playerNames.nameTwo} win`
+
+  const playerMoves = document.querySelector('.js-moves')
+
+  if (playerPick === 'rock') {
+    if (playerPick === comMove) {
+      result = 'tie'
+    } else if (comMove === 'paper') {
+      result = `${playerNames.nameOne} win` 
+    } else {
+      result = `${playerNames.nameTwo} win`
+    }
+  } else if (playerPick === 'paper') {
+    if (playerPick === comMove) {
+      result = 'tie'
+    } else if (comMove === 'scissor') {
+      result = `${playerNames.nameOne} win` 
+    } else {
+      result = `${playerNames.nameTwo} win`
+    }
   } else {
-    result = `${playerNames.nameOne} win`
+    if (playerPick === comMove) {
+      result = 'tie'
+    } else if (comMove === 'rock') {
+      result = `${playerNames.nameOne} win` 
+    } else {
+      result = `${playerNames.nameTwo} win`
+    }
   }
- 
+
+    
+
   if (result === 'tie') {
     score.ties++;
   } else if (result === `${playerNames.nameTwo} win`) {
@@ -162,6 +187,12 @@ function playGame (picked, other) {
   }
 
   localStorage.setItem('outcome', JSON.stringify(score))
+
+  
+  playerMoves.innerHTML = `
+  <div> <p>${playerPick}</p> <img src = ""> </div>
+  <div> <p>${comMove}</p> <img src = ""> </div>
+  `
   
   document.querySelector('.js-display').innerHTML = `${result}`
 
@@ -238,20 +269,11 @@ function reset () {
 
   function playAuto () {
     //checkPlayerHeader ()
-
+    playersDiv.classList.add('playersDiv')
     if (!isPlaying) {
     intervalId = setInterval (() => {
       let playerMove = computerPick ()
-      let computerMove = ''
-
-      if (playerMove === 'rock') {
-        computerMove = 'paper'
-      } else if (playerMove === 'paper') {
-        computerMove = 'scissor'
-      } else {
-        computerMove = 'rock'
-      }
-      playGame (playerMove, computerMove)
+      playGame (playerMove)
     }
     ,1500)
     isPlaying = true;
@@ -268,9 +290,10 @@ function reset () {
   function champ () {
    
     if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
-      return alert (`You can't finish what you did't start`)
+      return alert (`Play game to have a champion`)
     
     } else {
+      
       rpsDiv.hidden = true;
     document.querySelector('.js-display').innerHTML = ''
     document.querySelector('.js-playersScore')
@@ -281,7 +304,7 @@ function reset () {
       console.log (winner = `${playerNames.nameOne} wins`)
     }else if (score.losses > score.ties && score.losses > score.wins){
       console.log( winner = `${playerNames.nameTwo} wins`)
-    } else { console.log (winner = 'no winner')}
+    } else { console.log (winner = 'NO CHAMPION')}
     
     let htmlWinner = `<p>${winner}</p>`
     champDiv.innerHTML = htmlWinner
