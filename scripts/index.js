@@ -77,19 +77,19 @@ function getPlayer () {
         playerOneDisplay.innerHTML = playerNames.firstPlayer
       }
       inputElement.value = ''
-      playerHeaderElement.innerHTML = 'player two name';}
-      else {
+      playerHeaderElement.innerHTML = 'player two name';} else {
         secondPlayer = inputElement.value;
         if (playerNames.firstPlayer !== 'Computer One' && inputElement.value === '' && playerNames.secondPlayer === 'Computer Two') {
           playerNames.secondPlayer = 'computer';
-          playerTwoDisplay.innerHTML = playerNames.secondPlayer} else if (inputElement.value !== '' && playerNames.firstPlayer === 'Computer One') {
-            playerNames.firstPlayer = 'Computer'
-            playerOneDisplay.innerHTML = playerNames.firstPlayer
-            playerNames.secondPlayer = secondPlayer
-            playerTwoDisplay.innerHTML = playerNames.secondPlayer} else if (secondPlayer === '') {
-              playerTwoDisplay.innerHTML = playerNames.secondPlayer} else {
+          playerTwoDisplay.innerHTML = playerNames.secondPlayer} else if (
+            inputElement.value !== '' && playerNames.firstPlayer === 'Computer One') {
+              playerNames.firstPlayer = 'Computer'
+              playerOneDisplay.innerHTML = playerNames.firstPlayer
               playerNames.secondPlayer = secondPlayer
-              playerTwoDisplay.innerHTML = playerNames.secondPlayer}
+              playerTwoDisplay.innerHTML = playerNames.secondPlayer} else if (secondPlayer === '') {
+                playerTwoDisplay.innerHTML = playerNames.secondPlayer} else {
+                playerNames.secondPlayer = secondPlayer
+                playerTwoDisplay.innerHTML = playerNames.secondPlayer}
       inputElement.value = '' 
       playerHeaderElement.innerHTML = 'player one name'
     }
@@ -276,30 +276,26 @@ function champ () {
   if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
     return alert (`Play game to have a champion`)} else {
       rpsDiv.hidden = true;
-     document.getElementById('gameOutcome').hidden = true
-     //document.querySelector('.js-display').innerHTML = ''
-     //document.querySelector('.js-playersScore').innerHTML = ''
-
-  let winner = ''
-    if (score.wins > score.ties && score.wins > score.losses) {
-    console.log (winner = `
-    <div>${playerNames.firstPlayer} wins</div>
-    <img src = "images/trophy.PNG">` )
-  }else if (score.losses > score.ties && score.losses > score.wins){
-    console.log( winner = `
-    <div>${playerNames.firstPlayer} wins</div>
-    <img src = "images/trophy.PNG">`)
-  } else { console.log (winner = `
-    <div>NO CHAMP</div>
-    <img src = "images/tie.PNG">`)}
-  
-  let htmlWinner = `<div>${winner}</div>`
-  champDiv.innerHTML = htmlWinner
-  setTimeout(() => {
-    reset ()
-    champDiv.innerHTML = ''
-  },3000)
-}
-
-  champDiv.classList.add('endGame')
+      document.getElementById('gameOutcome').hidden = true;
+      const winner = '';
+      if (score.wins > score.ties && score.wins > score.losses) {
+        winner = `
+        <div>${playerNames.firstPlayer} wins</div>
+        <img src = "images/trophy.PNG">`} else if (
+          score.losses > score.ties && score.losses > score.wins) {
+          winner = `
+          <div>${playerNames.firstPlayer} wins</div>
+          <img src = "images/trophy.PNG">`} else {
+            winner = `
+            <div>NO CHAMP</div>
+            <img src = "images/tie.PNG">`
+          }
+          let htmlWinner = `<div>${winner}</div>`
+          champDiv.innerHTML = htmlWinner
+          setTimeout(() => {
+            reset ()
+            champDiv.innerHTML = ''
+          },3000)
+        }
+    champDiv.classList.add('endGame')
 }

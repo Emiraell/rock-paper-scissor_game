@@ -19,12 +19,12 @@ h3 {
   word-spacing: 2px;
   letter-spacing: 2px;
 }
+
 #main{
   padding: 5%;
   display: flex;
   flex-direction: column;
   max-width: 650px;
-
 }
 
 .inputHeader {
@@ -33,6 +33,7 @@ h3 {
   letter-spacing: 1px;
   font-size: 20px;
 }
+
 input::placeholder {
   padding: 3%;
   font-size: 16px;
@@ -42,27 +43,19 @@ input, .getPlayer-btn {
   width: 50%;
   height: 35px;
   border-radius: 4px;
-  border: none;
-  
+  border: none;  
 }
+
 input {
   padding: 0 1%;
   font-size: 17px;
   box-shadow: inset 2px 2px 3px rgba(0,0,0,0.3);
 }
 
-.getPlayer-btn {
-  width: 80px;
-  background-color: rgb(42, 55, 4);
-  color: rgb(225, 195, 195);
-  font-size: 17px;
-  cursor: pointer;
-  transition: opacity 0.5s;
-}
-
 .getPlayer-btn:hover {
   opacity: 0.8;
 }
+
 .getPlayer-btn:active {
   opacity: 0.5;
 }
@@ -75,36 +68,20 @@ input {
   justify-content: space-around;
   max-width: 250px;
   white-space: wrap;
-  font-weight: 550;
-  
+  font-weight: 550;  
 }
 
 .playerNames {
   border: none;
   font-weight: 450;
   padding-bottom: 8%;
-
 }
 
- img, .htmlImage{
+img, .htmlImage{
   width: 50%;
   height: 50%;
   object-fit: contain;
   align-content: center;
-}
-.rps-btn button, .htmlBtn {
-  margin: 10px 5px;
-  height: 100px;
-  width: 100px;
-  background-color: rgb(65, 40, 8);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: opacity 0.5s;
-}
-.htmlBtn {
-  height: 70px;
-  width: 70px;
 }
 
 .outcome, .endGame {
@@ -114,6 +91,7 @@ input {
   border-radius: 10px;
   width: 350px;
 }
+
 .endGame {
   background-color: rgb(65, 2, 2);
   display: flex;
@@ -121,11 +99,13 @@ input {
   padding-left: 20px;
   justify-content: center;
 }
+
 .endGame img {
   width: 70%;
   height: 70%;
   object-fit: contain;
 }
+
 .endGame div {
   font-size: 30px;
   color: rgb(222, 217, 205);
@@ -139,6 +119,7 @@ input {
   justify-content: space-around;
   padding: 10px;
 }
+
 .moves p {
   padding: 10px 0;
   margin-left: -10px;
@@ -151,37 +132,7 @@ input {
   padding-bottom: 3%;
   font-weight: 550;
 }
+
 .scoreDisplay {
-
   white-space: pre-wrap;
-}
-.action-btn button {
-  width: 80px;
-  height: 30px;
-  margin: 20px 2px;
-  border-radius: 3px;
-  border: none;
-  cursor: pointer;
-  color: white;
-  padding: 2px 2px;
-  transition: opacity 0.5s;
-  
-}
-.resetBtn {
-  background-color: rgb(156, 24, 24);
-}
-
-.autoPlayBtn {
-  background-color: rgb(181, 134, 17);
-}
-.champBtn {
-  background-color: rgb(6, 62, 3);
-}
-
-.resetBtn:hover, .autoPlayBtn:hover, .champBtn:hover, .rps-btn button:hover {
-  opacity: 0.8;
-}
-
-.resetBtn:active, .autoPlayBtn:active, .champBtn:active, .rps-btn button:active {
-  opacity: 0.5;
 }
