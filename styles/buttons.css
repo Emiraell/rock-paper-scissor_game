@@ -3,16 +3,6 @@
   background-color: rgb(42, 55, 4);
   color: rgb(225, 195, 195);
   font-size: 17px;
-  cursor: pointer;
-  transition: opacity 0.5s;
-}
-
-.getPlayer-btn:hover {
-  opacity: 0.8;
-}
-
-.getPlayer-btn:active {
-  opacity: 0.5;
 }
 
 .rps-btn button, .htmlBtn {
@@ -20,25 +10,23 @@
   height: 100px;
   width: 100px;
   background-color: rgb(65, 40, 8);
-  border: none;
   border-radius: 50px;
-  cursor: pointer;
-  transition: opacity 0.5s;
 }
 .htmlBtn {
   height: 70px;
   width: 70px;
 }
-
+.action-btn button, .htmlBtn, .rps-btn button, .getPlayer-btn {
+  cursor: pointer;
+  transition: opacity 0.5s;
+  border: none;
+}
 .action-btn button {
   width: 80px;
   height: 30px;
   margin: 20px 2px;
   border-radius: 3px;
-  border: none;
-  cursor: pointer;
   color: white;
-  transition: opacity 0.5s;  
 }
 .action-btn {
   margin-left: 5%;
@@ -46,19 +34,15 @@
 .resetBtn {
   background-color: rgb(156, 24, 24);
 }
-
 .autoPlayBtn {
   background-color: rgb(181, 134, 17);
 }
 .champBtn {
   background-color: rgb(6, 62, 3);
 }
-
-
-.resetBtn:hover, .autoPlayBtn:hover, .champBtn:hover, .rps-btn button:hover {
+.getPlayer-btn:hover, .resetBtn:hover, .autoPlayBtn:hover, .champBtn:hover, .rps-btn button:hover {
   opacity: 0.8;
 }
-
-.resetBtn:active, .autoPlayBtn:active, .champBtn:active, .rps-btn button:active {
+.getPlayer-btn:hover, .resetBtn:active, .autoPlayBtn:active, .champBtn:active, .rps-btn button:active {
   opacity: 0.5;
 }
