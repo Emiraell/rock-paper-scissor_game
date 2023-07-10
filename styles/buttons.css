@@ -7,6 +7,13 @@
   transition: opacity 0.5s;
 }
 
+.getPlayer-btn:hover {
+  opacity: 0.8;
+}
+
+.getPlayer-btn:active {
+  opacity: 0.5;
+}
 
 .rps-btn button, .htmlBtn {
   margin: 10px 5px;
@@ -31,8 +38,10 @@
   border: none;
   cursor: pointer;
   color: white;
-  padding: 2px 2px;
   transition: opacity 0.5s;  
+}
+.action-btn {
+  margin-left: 5%;
 }
 .resetBtn {
   background-color: rgb(156, 24, 24);

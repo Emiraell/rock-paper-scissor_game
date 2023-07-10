@@ -10,6 +10,7 @@ body {
   font-family: arial;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
   
 
 }
@@ -29,8 +30,6 @@ h3 {
 
 .inputHeader {
   margin-bottom: 10px;
-  font-weight: 500;
-  letter-spacing: 1px;
   font-size: 20px;
 }
 
@@ -52,13 +51,6 @@ input {
   box-shadow: inset 2px 2px 3px rgba(0,0,0,0.3);
 }
 
-.getPlayer-btn:hover {
-  opacity: 0.8;
-}
-
-.getPlayer-btn:active {
-  opacity: 0.5;
-}
 
 .playersDiv, .playerNames{
   border-bottom: 1px solid white;
@@ -66,9 +58,10 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  max-width: 250px;
+  max-width: 270px;
   white-space: wrap;
-  font-weight: 550;  
+  font-weight: 550; 
+  margin-left: 30px; 
 }
 
 .playerNames {
@@ -89,7 +82,7 @@ img, .htmlImage{
   border: 0.1px solid transparent;
   background-color: rgb(33, 1, 1);
   border-radius: 10px;
-  width: 350px;
+  width: 300px;
 }
 
 .endGame {
@@ -134,5 +127,6 @@ img, .htmlImage{
 }
 
 .scoreDisplay {
-  white-space: pre-wrap;
+  white-space: wrap;
+  padding: 10px 0;
 }

@@ -113,6 +113,7 @@ function called () {
    playerOneName.innerHTML = 'player one'
    playerTwoName.innerHTML = 'player two'
    
+   
    if (document.getElementById('playerOneName').innerHTML === '' && document.getElementById('playerTwoName').innerHTML === '') {
     document.getElementById('playerOneName').innerHTML = playerNames.firstPlayer
     document.getElementById('playerTwoName').innerHTML = playerNames.secondPlayer} 
@@ -120,6 +121,7 @@ function called () {
     playerNames.secondPlayer = 'Computer'
     document.getElementById('playerTwoName').innerHTML = playerNames.secondPlayer
   }
+  playersDiv.classList.add('playersDiv')
 }
 
 /*play the game after collecting player names*/
@@ -234,12 +236,14 @@ function reset () {
 
     /*reset game in cases where it was auto played*/
     clearInterval (intervalId)
-
     isPlaying = false
     document.querySelector('.js-autoPlay').innerHTML = 'Auto play'
     infoDiv.hidden = false;
     rpsDiv.hidden = false;
-    document.getElementById('playersInfo').innerHTML = '';
+    playerOneDisplay.innerHTML = ''
+    playerTwoDisplay.innerHTML = ''
+    playerOneName.innerHTML = ''
+    playerTwoName.innerHTML = ''
     inputElement.value = ''
     playerHeaderElement.innerHTML = 'player one name'
     outcomeDiv.classList.remove('outcome')
@@ -275,6 +279,7 @@ function playAuto () {
 function champ () {
   if (score.wins === 0 && score.ties === 0 && score.losses === 0) {
     return alert (`Play game to have a champion`)} else {
+      
       rpsDiv.hidden = true;
       document.getElementById('gameOutcome').hidden = true;
       const winner = '';
