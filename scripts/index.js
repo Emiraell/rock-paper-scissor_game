@@ -40,7 +40,6 @@ document.querySelector('.js-champ')
   champ ();
 })
 
-
 let score = JSON.parse(localStorage.getItem('outcome')) ||
  {
   wins: 0,
@@ -52,7 +51,6 @@ let playerNames = {
   firstPlayer: 'Computer One',
   secondPlayer: 'Computer Two'
 };
-
 
 /*play the game after collecting player datas*/
 let result ='';
@@ -222,6 +220,7 @@ playersDiv.classList.add('playersDiv');
 /*auto play game*/
 let gameIsPlaying = false;
 let intervalId;
+
 function playAuto () {
   if (!gameIsPlaying) {
     intervalId = setInterval (() => {
@@ -272,9 +271,7 @@ function champ () {
   }  
 }
 
-
 /*reset the game at any time in the game*/
-//let headerElement = document.getElementById('info').innerHTML
 let rpsDiv = document.getElementById('rpsBtn')
 
 function reset () {

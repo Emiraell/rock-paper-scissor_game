@@ -8,127 +8,90 @@ body {
   background-color:rgb(14, 2, 2);
   padding: 5px;
   font-family: arial;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  
-
 }
 h3 {
-  color: rgb(206, 202, 202);
-  margin: 3% 0;
+  margin: 6% 0 0 6%;
   word-spacing: 2px;
   letter-spacing: 2px;
 }
-
 #main{
   padding: 5%;
-  display: flex;
   flex-direction: column;
   max-width: 650px;
 }
-
+.endGame img, img, .htmlImage, input, .getPlayer-btn {
+  width: 55%;
+  height: 55%;
+}
 .inputHeader {
   margin-bottom: 10px;
   font-size: 20px;
 }
-
-input::placeholder {
-  padding: 3%;
+input::placeholder,input {
+  padding: 0 1%;
   font-size: 16px;
 }
-
 input, .getPlayer-btn {
-  width: 50%;
   height: 35px;
   border-radius: 4px;
-  border: none;  
+  border: none;
 }
-
 input {
-  padding: 0 1%;
-  font-size: 17px;
   box-shadow: inset 2px 2px 3px rgba(0,0,0,0.3);
 }
-
-
 .playersDiv, .playerNames{
   border-bottom: 1px solid white;
-  padding: 3% 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   max-width: 270px;
-  white-space: wrap;
-  font-weight: 550; 
   margin-left: 30px; 
 }
-
 .playerNames {
   border: none;
   font-weight: 450;
   padding-bottom: 8%;
 }
-
+.playersDiv, .playerNames, .moves{
+  display: flex;
+  justify-content: space-around;
+}
 img, .htmlImage{
-  width: 50%;
-  height: 50%;
   object-fit: contain;
   align-content: center;
 }
-
 .outcome, .endGame {
   padding: 3%;
-  border: 0.1px solid transparent;
+  border: 0 solid transparent;
   background-color: rgb(33, 1, 1);
   border-radius: 10px;
   width: 300px;
 }
-
 .endGame {
   background-color: rgb(65, 2, 2);
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  justify-content: center;
 }
-
 .endGame img {
-  width: 70%;
-  height: 70%;
   object-fit: contain;
 }
-
 .endGame div {
-  font-size: 30px;
+  font-size: 20px;
   color: rgb(222, 217, 205);
-  font-weight: bold;
-  font-style: italic;
   text-transform: uppercase;
 }
-
-.moves {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
+.moves p, .winnerDisplay, .endGame div,
+.playersDiv, .playerNames {
+  font-weight: 550;
 }
-
+.moves p, .endGame div {
+  font-style: italic;
+}
 .moves p {
   padding: 10px 0;
   margin-left: -10px;
-  font-style: italic;
-  font-weight: 550;
-  
 }
-
 .winnerDisplay {
   padding-bottom: 3%;
-  font-weight: 550;
 }
-
-.scoreDisplay {
+.scoreDisplay, .playersDiv, .playerNames{
   white-space: wrap;
-  padding: 10px 0;
+  padding: 3% 0;
 }
 .resetScore {
   padding: 0 5%;

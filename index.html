@@ -9,13 +9,11 @@
 </head>
 
 <body>
-  
+  <header>
+    <h3>ROCK PAPER SCISSOR GAME</h3>
+  </header>
 
   <main id="main">
-    <header>
-      <h3>ROCK PAPER SCISSOR GAME</h3>
-    </header>
-  
     <section>
       <div id="info" class="getPlayers">
         <div id="nameInputHeader" class="inputHeader">player one name</div>
@@ -38,24 +36,24 @@
     </section>
 
     <section>
-      <div id="endGame" class="endGamee">
+      <div id="endGame" class="endGamee"> </div>
+    </section>
 
-      </div>
-
+    <section>
       <div id="rpsBtn" class="rps-btn">
         <button class="js-rock playGameBtn js-playGame">
           <img class="css-img" src="images/rock.PNG" alt="">
         </button>
-
         <button class="js-paper playGameBtn js-playGame">
           <img class="css-img" src="images/paper.PNG" alt="">
         </button>
-        
         <button class="js-scissor playGameBtn js-playGame">
           <img class="css-img" src="images/scissor.PNG" alt="">
         </button>
       </div>
-      
+    </section>
+
+    <section>
       <div id="gameOutcome" class="outcomee">
         <div>
           <div class="moves js-moves"></div>
@@ -64,18 +62,21 @@
         <p class="js-playersScore scoreDisplay"></p>
       </div>
     </section>
-      
-
+    
     <section>
       <div class="action-btn">
-        <button class="resetBtn js-resetBtn">Reset</button>
-        
-        <button class = "js-autoPlay autoPlayBtn">Auto play</button>
-        <button id="gameChamp" class="js-champ champBtn">champ</button>
+        <button class="resetBtn js-resetBtn">
+          Reset
+        </button>    
+        <button class = "js-autoPlay autoPlayBtn">
+          Auto play
+        </button>
+        <button id="gameChamp" class="js-champ champBtn">
+          champ
+        </button>
       </div>
     </section>
   </main>
-  
   
   <script src="scripts/index.js"></script>
 </body>
