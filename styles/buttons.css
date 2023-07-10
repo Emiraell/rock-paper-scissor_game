@@ -6,7 +6,7 @@
 }
 
 .rps-btn button, .htmlBtn {
-  margin: 10px 5px;
+  margin: 10px 10px;
   height: 100px;
   width: 100px;
   background-color: rgb(65, 40, 8);
@@ -29,7 +29,7 @@
   color: white;
 }
 .action-btn {
-  margin-left: 5%;
+  margin-left: 8%;
 }
 .resetBtn {
   background-color: rgb(156, 24, 24);
