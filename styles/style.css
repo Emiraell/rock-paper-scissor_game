@@ -130,3 +130,6 @@ img, .htmlImage{
   white-space: wrap;
   padding: 10px 0;
 }
+.resetScore {
+  padding: 0 5%;
+}
