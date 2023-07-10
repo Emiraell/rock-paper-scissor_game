@@ -47,7 +47,7 @@ let score = JSON.parse(localStorage.getItem('outcome')) ||
   losses: 0
 };
 
-let playerNames = {
+let playerNames = JSON.parse(localStorage.getItem('playerNames')) || {
   firstPlayer: 'Computer One',
   secondPlayer: 'Computer Two'
 };
@@ -59,7 +59,7 @@ let compMove ='';
 let infoDiv = document.getElementById('info');
 const outcomeDiv = document.getElementById('gameOutcome');
 const playerMoves = document.querySelector('.js-moves');
-const WinnerRender = document.querySelector('.js-display');
+const winnerRender = document.querySelector('.js-display');
 const scoreRender = document.querySelector('.js-playersScore');
 
 function playGame (playerPick) {
@@ -68,7 +68,7 @@ computerPick ();
 
 if (playerPick === 'rock') {
   if (playerPick === compMove) {
-    result = 'tie';
+    result = 'Tie';
   } else if (compMove === 'paper') {
     result = `${playerNames.firstPlayer} win`;
   } else {
@@ -76,7 +76,7 @@ if (playerPick === 'rock') {
   }
 } else if (playerPick === 'paper') {
   if (playerPick === compMove) {
-    result = 'tie';
+    result = 'Tie';
   } else if (compMove === 'scissor') {
     result = `${playerNames.firstPlayer} win`;
   } else {
@@ -103,6 +103,7 @@ if (result === 'Tie') {
 
 /*store in local storage to avoid loss of result*/
 localStorage.setItem('outcome', JSON.stringify(score));
+localStorage.setItem('playerNames', JSON.stringify(playerNames));
 
 playerMoves.innerHTML = `
   <div> 
@@ -118,7 +119,7 @@ playerMoves.innerHTML = `
     </button> 
   </div>
 `;
-WinnerRender.innerHTML = `${result}`;
+winnerRender.innerHTML = `${result}`;
 scoreRender.innerHTML = `
 ${playerNames.firstPlayer} Wins: ${score.wins} Ties: ${score.ties} 
 ${playerNames.secondPlayer} Wins: ${score.losses}`;
@@ -210,9 +211,10 @@ function checkPlayerRender () {
   if (playerOneRender.innerHTML === '' && playerTwoRender.innerHTML === '') {
   playerOneRender.innerHTML = playerNames.firstPlayer;
   playerTwoRender.innerHTML = playerNames.secondPlayer;
-} if (playerTwoRender.innerHTML === '') {
+}
+if (playerTwoRender.innerHTML === '') {
   playerNames.secondPlayer = 'Computer';
-  playerTwo.innerHTML = playerNames.secondPlayer;
+  playerTwoRender.innerHTML = playerNames.secondPlayer;
 }
 playersDiv.classList.add('playersDiv');
 }
@@ -255,7 +257,7 @@ function champ () {
       <img src = "images/trophy.PNG">`;
     } else if (score.losses > score.ties && score.losses > score.wins) {
       winner = `
-      <div>${playerNames.firstPlayer} wins</div>
+      <div>${playerNames.secondPlayer} wins</div>
       <img src = "images/trophy.PNG">`;
     } else {
       winner = `
@@ -282,12 +284,13 @@ function reset () {
     losses: 0
   };
 
+  localStorage.removeItem('playerNames');
   playerNames = {
     firstPlayer: 'Computer One',
     secondPlayer: 'Computer Two'
   };
 
-  WinnerRender.innerHTML = '';
+  winnerRender.innerHTML = '';
   scoreRender.innerHTML = `
     wins: ${score.wins} ties: ${score.ties} losses: ${score.losses}`
     scoreRender.classList.add('resetScore');
