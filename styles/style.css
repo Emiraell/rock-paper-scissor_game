@@ -14,6 +14,21 @@ h3 {
   word-spacing: 2px;
   letter-spacing: 2px;
 }
+.ruleSection {
+  font-size: small;
+  margin: 1% 5%;
+}
+.ruleSection p {
+  text-decoration: underline;
+  color: rgb(117, 116, 229);
+  margin-left: 5px;  
+}
+.rule, .ruleSection p{
+  display: inline;
+}
+.rules {
+  padding-top: 10px;
+}
 #main{
   padding: 2% 0 5% 5%;
   flex-direction: column;
@@ -81,7 +96,7 @@ img, .htmlImage{
 .playersDiv, .playerNames {
   font-weight: 550;
 }
-.moves p, .endGame div {
+.moves p, .endGame div, .ruleSection{
   font-style: italic;
 }
 .moves p {

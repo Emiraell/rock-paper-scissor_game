@@ -40,6 +40,25 @@ document.querySelector('.js-champ')
   champ ();
 })
 
+//view game rules
+const gameRule = document.querySelector('.js-rules');
+const ruleDiv = document.getElementById('gameRules')
+
+gameRule.addEventListener ('click', () => {
+  if (gameRule.innerHTML === 'rules') {
+    ruleDiv.innerHTML = `
+    Rock wins against paper, paper wins against <br/> 
+    scissors and scissors wins against rock`;
+    gameRule.innerHTML = 'close';
+    gameRule.classList.add('ruleRender');
+  } else {
+    ruleDiv.innerHTML = '';
+    gameRule.innerHTML = 'rules';
+    gameRule.classList.remove('ruleRender');
+  }
+})
+
+// initialization
 let score = JSON.parse(localStorage.getItem('outcome')) ||
  {
   wins: 0,
@@ -61,6 +80,7 @@ const outcomeDiv = document.getElementById('gameOutcome');
 const playerMoves = document.querySelector('.js-moves');
 const winnerRender = document.querySelector('.js-display');
 const scoreRender = document.querySelector('.js-playersScore');
+const ruleSection = document.getElementById('ruleSection')
 
 function playGame (playerPick) {
 checkPlayerRender ();
@@ -126,6 +146,7 @@ ${playerNames.secondPlayer} Wins: ${score.losses}`;
 
 /*hid/remove info elements*/
 infoDiv.hidden = true;
+ruleSection.hidden = true;
 outcomeDiv.classList.add('outcome');
 }
 
@@ -307,16 +328,19 @@ function reset () {
     //reset elements of the game back to default
     infoDiv.hidden = false;
     rpsDiv.hidden = false;
-    playerOneRender.innerHTML = ''
-    playerTwoRender.innerHTML = ''
-    playerOneName.innerHTML = ''
-    playerTwoName.innerHTML = ''
-    inputElement.value = ''
-    playerHeaderElement.innerHTML = 'player one name'
-    outcomeDiv.classList.remove('outcome')
-    playersDiv.classList.remove('playersDiv')
-    playerMoves.innerHTML = ''
-    champDiv.innerHTML = ''
-    champDiv.classList.remove('endGame')
-    document.getElementById('gameOutcome').hidden = false
+    ruleSection.hidden = false;
+    ruleDiv.innerHTML = '';
+    gameRule.innerHTML = 'rules';
+    playerOneRender.innerHTML = '';
+    playerTwoRender.innerHTML = '';
+    playerOneName.innerHTML = '';
+    playerTwoName.innerHTML = '';
+    inputElement.value = '';
+    playerHeaderElement.innerHTML = 'player one name';
+    outcomeDiv.classList.remove('outcome');
+    playersDiv.classList.remove('playersDiv');
+    playerMoves.innerHTML = '';
+    champDiv.innerHTML = '';
+    champDiv.classList.remove('endGame');
+    document.getElementById('gameOutcome').hidden = false;
   }
