@@ -1,14 +1,14 @@
 .getPlayer-btn {
   width: 80px;
-  background-color: rgb(42, 55, 4);
-  color: rgb(225, 195, 195);
+  background-color: #2a3704;
+  color: #e1c3c3;
   font-size: 17px;
 }
 .rps-btn button, .htmlBtn {
   margin: 10px 10px;
   height: 100px;
   width: 100px;
-  background-color: rgb(65, 40, 8);
+  background-color: #412808;
   border-radius: 50px;
 }
 .htmlBtn {
@@ -33,13 +33,13 @@
   margin-left: 6%;
 }
 .resetBtn {
-  background-color: rgb(156, 24, 24);
+  background-color: #9c1818;
 }
 .autoPlayBtn {
-  background-color: rgb(181, 134, 17);
+  background-color: #b58611;
 }
 .champBtn {
-  background-color: rgb(6, 62, 3);
+  background-color: #063e03;
 }
 .getPlayer-btn:hover, .resetBtn:hover, .autoPlayBtn:hover, .champBtn:hover, .rps-btn button:hover {
   opacity: 0.8;

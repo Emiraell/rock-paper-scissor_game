@@ -47,7 +47,7 @@ const ruleDiv = document.getElementById('gameRules')
 gameRule.addEventListener ('click', () => {
   if (gameRule.innerHTML === 'rules') {
     ruleDiv.innerHTML = `
-    Rock wins against paper, paper wins against <br/> 
+    Rock wins against paper&#44; paper wins against <br/> 
     scissors and scissors wins against rock`;
     gameRule.innerHTML = 'close';
     gameRule.classList.add('ruleRender');
