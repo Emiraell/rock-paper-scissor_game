@@ -4,8 +4,8 @@
 }
 body {
   white-space: nowrap;
-  color: rgb(242, 239, 234);
-  background-color:rgb(14, 2, 2);
+  color: #f2efea;
+  background-color: #0e0202;
   padding: 5px;
   font-family: arial;
 }
@@ -20,7 +20,7 @@ h3 {
 }
 .ruleSection p {
   text-decoration: underline;
-  color: rgb(117, 116, 229);
+  color: #7574e5;
   margin-left: 5px;  
 }
 .rule, .ruleSection p{
@@ -52,11 +52,11 @@ input, .getPlayer-btn {
   border: none;
 }
 input {
-  box-shadow: inset 2px 2px 3px rgba(0,0,0,0.3);
+  box-shadow: inset 2px 2px 3px #000000;
   width: 40%;
 }
 .playersDiv, .playerNames{
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #f1eaea;
   max-width: 270px;
   margin-left: 30px; 
 }
@@ -76,12 +76,13 @@ img, .htmlImage{
 .outcome, .endGame {
   padding: 3%;
   border: 0 solid transparent;
-  background-color: rgb(33, 1, 1);
+  background-color: #210101;
   border-radius: 10px;
   width: 300px;
 }
 .endGame {
-  background-color: rgb(65, 2, 2);
+  background-color: #410202
+  ;
 }
 .endGame img {
   object-fit: contain;
@@ -89,8 +90,9 @@ img, .htmlImage{
 }
 .endGame div {
   font-size: 20px;
-  color: rgb(222, 217, 205);
+  color: #ded9cd;
   text-transform: uppercase;
+  padding-left: 15px;
 }
 .moves p, .winnerDisplay, .endGame div,
 .playersDiv, .playerNames {
